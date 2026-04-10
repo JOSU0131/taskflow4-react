@@ -1,73 +1,21 @@
-# React + TypeScript + Vite
+# 🏛️ TaskFlow UI - Galería & Gestión de Alumnos
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Proyecto desarrollado para el **Laboratorio 3 de TypeScript Avanzado**. Esta aplicación demuestra la integración de lógica de negocio compleja dentro de un entorno moderno con **React** y **Vite**.
 
-Currently, two official plugins are available:
+## 🎯 Puntos Clave del Laboratorio
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Análisis Exhaustivo**: Implementación del tipo `never` en la lógica de matriculación para garantizar robustez ante futuros cambios.
+- **Componentes Genéricos**: Creación de una `DataTable<T>` reutilizable para gestionar tanto el inventario de arte como el listado de alumnos.
+- **Utility Types**: Uso de `Partial<T>` para manejar estados de edición de forma segura.
+- **Librerías Externas**: Integración de **Luxon** con tipado estricto (`@types/luxon`) para el cálculo dinámico de fechas.
 
-## React Compiler
+## 🛠️ Comandos Útiles
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- `npm install`: Instala las dependencias (incluyendo Luxon).
+- `npm run dev`: Inicia el servidor de desarrollo.
+- `npx tsc --noEmit`: Ejecuta el verificador de tipos (Debe arrojar 0 errores).
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 📂 Documentación Adicional
+Puedes encontrar un análisis detallado de la arquitectura y el uso de tipos en el archivo:
+`docs/arquitectura-final.md`
 ```
